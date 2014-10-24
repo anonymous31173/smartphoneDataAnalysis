@@ -45,7 +45,7 @@ Pruned trees
 --
 By means 10-fold cross validation, we found that the optimal number of nodes is 6. Figure 1 shows the misclassification rate and deviance reach the minimum when the number of nodes is 6. The tree model with 6 nodes yields a value of misclassification error rate of 2.744% on the training dataset.
 
-Table 1 shows the confusion matrix on the test dataset and the error rate is 19.68%.
+Table 1 shows the confusion matrix on the test dataset. The error rate is 19.68%.
 
 
 |          |laying  |sitting |standing|walk    |walkdown|walkup  |
@@ -56,7 +56,7 @@ Table 1 shows the confusion matrix on the test dataset and the error rate is 19.
 |walk      |   0    |   0    |   0    |   32   |   0    |   24   |
 |walkdown  |   0    |   0    |   0    |   3    |   37   |   12   |
 |walkup    |   0    |   0    |   0    |   1    |   4    |   49   |
-[Table 1][Confusion matrix]
+**Table 1.** Confusion matrix
 
 
 Figure 2 shows the features used by the trained tree. We can see that only 5 different features are selected: 
