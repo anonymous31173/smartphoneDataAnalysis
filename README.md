@@ -21,19 +21,16 @@ For our prediction task, we use data from subjects 1, 3, 5, and 6 as training da
 Exploratory Analysis  
 ==
 
-Principal Components Analysis (PCA) was applied to visualized data distribution. Fig. 1 shows the two principal components that represent 90% of variance. 
+Principal Components Analysis (PCA) was applied to visualized data distribution. Figure shows two main principal components in training samples. 
+
+![Alt text](https://github.com/lnicalo/smartphoneDataAnalysis/blob/master/images/PCA_training.jpg)
 
 Prediction modeling  
 ==
 Pruned trees
 --
 To build a function that predicts what activity a subject is performing based on the quantitative measurements from the Samsung phone, we use a pruned tree model [6]. The tree model is pruned because tree models usually suffer from overfitting. All features are taken into account to build the model. During the training process, each feature is selected or not automatically. Therefore, there is no point in discussing about potential confounders. 
-The optimal value of nodes is found by means of 10-fold cross validation. To measure the quality of each model, we employ the error rate to evaluate our prediction model. The error represents the proportion between the misclassified results and the number of trials. The error rate can be derived from the confusion matrix as follows [7]
-
-
-
-
-where nii is the i-th element of the main diagonal of the confusion matrix, K is the number of classes and  NT is the number of trials.
+The optimal value of nodes is found by means of 10-fold cross validation. To measure the quality of each model, we employ the error rate to evaluate our prediction model. The error represents the proportion between the misclassified results and the number of trials.
 
 Random forest
 --
