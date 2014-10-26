@@ -16,7 +16,7 @@ This study uses data consisting of 7352 measurements from the 30 subjects’ Sam
 The data were downloaded from the [course website](https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda)
 on December 8, 2013 using the R programming language [5].  There is a code book for the variables in the data set available in [UCI Repository Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-For our prediction task, we use data from subjects 1,2, ..., and 10 as training dataset. The test dataset is made up of the measurements from subjects 27, 28, 29, and 30. Notice training and test datasets does not overlap. After the subject selection, the training dataset are test dataset are made up of 328 and 371 observations, respectively.
+For our prediction task, we use data from subjects 1,2, ..., and 10 as training dataset. The test dataset is made up of the measurements from subjects 27, 28, 29, and 30. Notice training and test datasets does not overlap. After the subject selection, the training and test datasets are made up of 1904 and 371 observations, respectively.
 
 Exploratory Analysis  
 ==
