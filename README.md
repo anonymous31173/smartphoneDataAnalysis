@@ -16,11 +16,10 @@ This study uses data consisting of 7352 measurements from the 30 subjects’ Sam
 The data were downloaded from the [course website](https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda)
 on December 8, 2013 using the R programming language [5].  There is a code book for the variables in the data set available in [UCI Repository Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-For our prediction task, we use data from subjects 1, 3, 5, and 6 as training dataset. The test dataset is made up of the measurements from subjects 27, 28, 29, and 30. Notice training and test datasets does not overlap. After the subject selection, the training dataset are test dataset are made up of 328 and 371 observations, respectively.
+For our prediction task, we use data from subjects 1,2, ..., and 10 as training dataset. The test dataset is made up of the measurements from subjects 27, 28, 29, and 30. Notice training and test datasets does not overlap. After the subject selection, the training dataset are test dataset are made up of 328 and 371 observations, respectively.
 
 Exploratory Analysis  
 ==
-
 Principal Components Analysis (PCA) was applied to visualized data distribution. Figure shows two main principal components in training samples. 
 
 ![Alt text](https://github.com/lnicalo/smartphoneDataAnalysis/blob/master/images/PCA_training.jpg)
@@ -29,44 +28,33 @@ Prediction modeling
 ==
 Pruned trees
 --
-To build a function that predicts what activity a subject is performing based on the quantitative measurements from the Samsung phone, we use a pruned tree model [6]. The tree model is pruned because tree models usually suffer from overfitting. All features are taken into account to build the model. During the training process, each feature is selected or not automatically. Therefore, there is no point in discussing about potential confounders. 
-The optimal value of nodes is found by means of 10-fold cross validation. To measure the quality of each model, we employ the error rate to evaluate our prediction model. The error represents the proportion between the misclassified results and the number of trials.
+We use a pruned tree model to build a function that predicts what activity a subject is performing based on the quantitative measurements from the Samsung phone [6]. Tree model usually suffer from overvitting so we apply pruning. All features are taken into account to train the model. During the training process, each feature is selected or not automatically. 
 
-Random forest
---
+The optimal amount of nodes is found by means of 10-fold cross validation. To measure the quality of each model, we employ the error rate to evaluate our prediction model. The error represents the proportion between the misclassified results and the number of trials. Figure shows the misclassification rate reaches the minimum when the number of nodes is 11. The tree model with 11 nodes yields a value of misclassification error rate of 2.744% on the training dataset.By means 10-fold cross validation, we found that the optimal number of nodes is 6. The tree size is fixed to 11.
 
+![Alt text](https://github.com/lnicalo/smartphoneDataAnalysis/blob/master/images/CV_treesize.jpg)
 
 Results
 ==
 Pruned trees
 --
-By means 10-fold cross validation, we found that the optimal number of nodes is 6. Figure 1 shows the misclassification rate and deviance reach the minimum when the number of nodes is 6. The tree model with 6 nodes yields a value of misclassification error rate of 2.744% on the training dataset.
 
-Table 1 shows the confusion matrix on the test dataset. The error rate is 19.68%.
+Table 1 shows the confusion matrix on the test dataset. The error rate is 13.20 %.
 
 
 |          |laying  |sitting |standing|walk    |walkdown|walkup  |
 |----------|:------:|:------:|:------:|:------:|:------:|:------:|
 |laying    |   74   |   0    |   0    |   0    |   0    |   0    |
-|sitting   |   0    |   43   |   21   |   0    |   0    |   0    |
-|standing  |   0    |   8    |   63   |   0    |   0    |   0    |
-|walk      |   0    |   0    |   0    |   32   |   0    |   24   |
-|walkdown  |   0    |   0    |   0    |   3    |   37   |   12   |
-|walkup    |   0    |   0    |   0    |   1    |   4    |   49   |
+|sitting   |   0    |   42   |   22   |   0    |   0    |   0    |
+|standing  |   0    |   7    |   64   |   0    |   0    |   0    |
+|walk      |   0    |   0    |   0    |   55   |   0    |   1    |
+|walkdown  |   0    |   0    |   0    |   10   |   40   |   2    |
+|walkup    |   0    |   0    |   1    |   2    |   4    |   47   |
 **Table 1.** Confusion matrix
 
-
-Figure 2 shows the features used by the trained tree. We can see that only 5 different features are selected: 
-
-1.	“tBodyAcc.std...X” 		       – Feature_4
-2.	“tGravityAcc.mean...X” 	    – Feature_41
-3.	“tGravityAcc.max...Y” 	     – Feature_51
-4.	“tGravityAcc.arCoeff...X.1” – Feature_66
-5.	“tBodyAccJerk.max...X”  	   – Feature_90
- 
 Conclusions
 ==
-This analysis suggests that predicting the activity of a particular subject on the basis of the kinetic activity is possible with relatively low error rate. The results show the error rate in testing trials is 19.68%. Interestingly, this prediction can be performed using only 5 features. 
+This analysis suggests that predicting the activity of a particular subject on the basis of the kinetic activity is possible with relatively low error rate. The results show the error rate in testing trials is 13.20 %. Interestingly, this prediction can be performed using only 5 features. 
 
 Some limitations of this study should be remarked. First, the model was tested on only four different subjects and only five tasks are recognized. Second, tree models can provide easy to implement and interpret models but they can be easily prone to overfitting. 
 
