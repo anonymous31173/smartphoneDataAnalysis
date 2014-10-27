@@ -11,8 +11,21 @@ In this study, we use the information provided by the accelerometer of the smart
 
 Dataset
 ==
-This study uses data consisting of 7352 measurements from the 30 subjects’ Samsung phone. Each observation contains information about the acceleration, angular velocity, amongst others features for each subject performing a particular activity. The activities recorded were walking, walking upstairs, walking downstairs, sitting, standing, and laying. 
-The data file "samsungData.rda" can be downloaded from the [course website](https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda).  There is a code book for the variables in the data set available in [UCI Repository Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+This study uses data consisting of 10299 measurements from the 30 subjects’ Samsung phone. Each observation contains information about the acceleration, angular velocity, amongst others features for each subject performing a particular activity. The activities recorded were walking, walking upstairs, walking downstairs, sitting, standing, and laying. 
+The dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+There is a code book for the variables in the data set available in [UCI Repository Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+Methods
+==
+A deep belief network (DBN) is used to classify the instances. A very short and concise tutorial on deep learning and DBN in particular can be found [here](http://www.pyimagesearch.com/2014/09/22/getting-started-deep-learning-python).
+
+Deep learning has been shown very effective in some classification tasks such as digit recognition. Here, a DBN is applied to recognize activity.
+
+The DBN is configured with usual parameters. Nevertheless, other configuration could be equally effective. The first configurable parameter is the  number of nodes in the hidden layer. This hidden layer is represented as RBM with 2000 nodes. The output of the 2000 node hidden layer is fed into the output layer, which consists of an output for each of the class labels. Learn rate and learn rate decays are fixed to 0.1 and 0.9 respectively. The number of epochs, or iterations of the training data, is set to 10.
+
+Results
+==
 
 References
 ==
