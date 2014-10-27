@@ -7,7 +7,7 @@ Activity recognition aims to recognize the actions and goals of one or more subj
  
 Mobiles are currently equipped with different sensors like accelerometer, magnetic field, and air pressure meter, which help in the process of extracting context of the user like location, situation etc. The accelerometer is a sensing element that measures the acceleration associated with the positioning of a weight in which it has been embedded (e.g. a mobile device) [2]. The most common accelerometer is the triaxial accelerometer, which can measure the acceleration on three axes (x, y and z). The axes are related with the movements forward/backward, left/right and up/down, respectively. 
 
-In this study, we use the information provided by the accelerometer of the smartphone Samsung Galaxy S II [3] to classify five usual activities: walking, walking upstairs, walking downstairs, sitting, standing, and laying. Several type of classifiers are tested.
+In this study, we use the information provided by the accelerometer of the smartphone Samsung Galaxy S II [3] to classify five usual activities: walking, walking upstairs, walking downstairs, sitting, standing, and laying. Several classifiers are tested.
 
 Dataset
 ==
