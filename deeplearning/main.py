@@ -19,8 +19,9 @@ trainFeats = pd.read_csv(trainFile, delim_whitespace=True, header=None)
 trainFeats = trainFeats.as_matrix()
 trainLabels = pd.read_csv(trainLabelsFile, header=None).values.ravel()
 
-#trainFeats -= trainFeats.min()
-#trainFeats /= trainFeats.max()
+# normalization (recommendable)
+trainFeats -= trainFeats.min()
+trainFeats /= trainFeats.max()
 
 # Loading test data
 print "loading test features and labels ..."
@@ -28,8 +29,9 @@ testFeats = pd.read_csv(testFile, delim_whitespace=True, header=None)
 testFeats = testFeats.as_matrix()
 testLabels = pd.read_csv(testLabelsFile, header=None).values.ravel()
 
-#testFeats -= testFeats.min()
-#testFeats /= testFeats.max()
+# normalization (recommendable)
+testFeats -= testFeats.min()
+testFeats /= testFeats.max()
 
 dbn = DBN(
     [trainFeats.shape[1], 2000, 7],
