@@ -11,8 +11,7 @@ In this study, we use the information provided by the accelerometer of the smart
 
 Dataset
 ==
-This study uses data consisting of 7352 measurements from the 30 subjects’ Samsung phone. Each observation contains information about the acceleration, angular velocity, amongst others features for each subject performing a particular activity. The activities recorded were walking, walking upstairs, walking downstairs, sitting, standing, and laying. 
-The data file "samsungData.rda" can be downloaded from the [course website](https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda).  There is a code book for the variables in the data set available in [UCI Repository Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+This study uses data consisting of 10299 measurements from the 30 subjects’ Samsung phone. Each observation contains information about the acceleration, angular velocity, amongst others features for each subject performing a particular activity. The activities recorded were walking, walking upstairs, walking downstairs, sitting, standing, and laying. The dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. There is a code book for the variables in the data set available in UCI Repository Machine Learning
 
 References
 ==
